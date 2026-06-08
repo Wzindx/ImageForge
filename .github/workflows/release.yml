@@ -62,7 +62,7 @@ jobs:
 
       - name: Download release APK artifact from triggering build
         if: env.RELEASE_ENABLED == 'true' && github.event_name == 'workflow_run'
-        uses: dawidd6/action-download-artifact@v11
+        uses: dawidd6/action-download-artifact@v21
         with:
           github_token: ${{ github.token }}
           run_id: ${{ env.ARTIFACT_RUN_ID }}
