@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout release source
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
@@ -62,7 +62,7 @@ jobs:
 
       - name: Download release APK artifact from triggering build
         if: env.RELEASE_ENABLED == 'true' && github.event_name == 'workflow_run'
-        uses: dawidd6/action-download-artifact@v11
+        uses: dawidd6/action-download-artifact@v21
         with:
           github_token: ${{ github.token }}
           run_id: ${{ env.ARTIFACT_RUN_ID }}
